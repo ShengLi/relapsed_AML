@@ -1,8 +1,11 @@
 # Figure 1 #
 
 # survival analysis
-# EPM
-load("dn_epm_RTIME.rda")
+# define a data.frame "dn.epm.rtime"
+# Column 1
+# EPM: Calculate the EPM value from methclone (number of eloci per million loci sequenced)
+# Column 2
+# RTIME: relapse time from diagnosis to relapse (from Supptable 1)
 library(survival)
 survdiff(Surv(RTIME) ~ (EPM > median(EPM)), dn.epm.rtime) 
 
